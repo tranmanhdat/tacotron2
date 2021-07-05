@@ -11,7 +11,7 @@ def convert_to_16k(path_file):
     out_path = path_file.replace("/speech_data/", "/speech_data_22050/")
     out_folder = os.path.dirname(out_path)
     os.makedirs(out_folder, exist_ok=True)
-    y, s = librosa.load(in_path, sr=16000)
+    y, s = librosa.load(in_path, sr=22050)
     y_16k = librosa.resample(y, s, 22050)
     sf.write(out_path, y_16k, 22050, format='WAV', subtype='PCM_16')
 if __name__ == '__main__':
