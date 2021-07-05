@@ -28,8 +28,8 @@ def create_hparams(hparams_string=None, verbose=False):
         load_mel_from_disk=False,
         # training_files='/root/src/data/tts/lst/voice/training.txt',
         # validation_files='/root/src/data/tts/lst/voice/testing.txt',
-        training_files='/root/src/data/tts/lst_encoder/disabled_24/training.txt',
-        validation_files='/root/src/data/tts/lst_encoder/disabled_24/testing.txt',
+        training_files='/root/src/data/tts/lst/wav/training.txt',
+        validation_files='/root/src/data/tts/lst/wav/testing.txt',
             # text_cleaners=['english_cleaners'],
         text_cleaners=['basic_cleaners'],
 
