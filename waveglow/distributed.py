@@ -171,6 +171,7 @@ def main(config, stdout_dir, args_str):
 
 
 if __name__ == '__main__':
+    os.makedirs("checkpoints", exist_ok=True)
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config', type=str, required=True,
                         help='JSON file for configuration')
