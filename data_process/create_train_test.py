@@ -31,8 +31,12 @@ def replace_number(text):
 def normalize_text(text):
    text = normalize("NFC", text)
    text = text.lower()
+   text = text.replace(".", " ").replace("!", "").replace("?", "").replace(":", "").replace("\"", " ").replace("-", " ").replace(",", " ")
+   text = " ".join(text.split())
    text = replace_time(text)
    text = replace_number(text)
+   if len(text)==0:
+       print("err")
    return text
 
 import pandas as pd
