@@ -1,0 +1,12 @@
+matplotlib==2.1.0
+tensorflow==1.15.2
+tensorboard==1.15.0
+numpy==1.16.0
+inflect==0.2.5
+librosa==0.6.0
+scipy
+Unidecode==1.0.22
+pillow
+future
+numba==0.48.0
+
