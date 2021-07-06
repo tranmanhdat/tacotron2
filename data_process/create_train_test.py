@@ -46,12 +46,17 @@ data = pd.read_csv('meta_data.tsv', sep='\t', header=None)
 data = data.sample(frac=1)
 train_ratio = 0.8
 train_index = int(train_ratio * len(data))
+f_wave = open('train_files.txt', 'w+')
 with open('training.txt', 'w') as fd:
     for i, fname in enumerate(data[0][:train_index]):
         text = normalize_text(data[1][i])
         fd.write('{}|{}\n'.format(os.path.join("/root/src/data/speech_data", fname), text))
+        f_wave.write('{}\n'.format( os.path.join("/root/src/data/speech_data", fname)))
 
 with open('testing.txt', 'w') as fd:
     for i, fname in enumerate(data[0][train_index:]):
         text = normalize_text(data[1][i])
         fd.write('{}|{}\n'.format(os.path.join("/root/src/data/speech_data", fname), text))
+        f_wave.write('{}\n'.format( os.path.join("/root/src/data/speech_data", fname)))
+
+
